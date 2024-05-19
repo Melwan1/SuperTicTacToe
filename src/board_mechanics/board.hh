@@ -39,8 +39,24 @@ public:
     void setElement(int index, Board* board);
     void setWinner(Player* player);
 
+    bool wonRow(int row, Player* player);
+    bool wonColumn(int column, Player* player);
+    bool wonBoard(Player* player);
+
+    enum Diagonal {
+        PRINCIPAL = 0,
+        ANTI_DIAGONAL,
+    };
+
+    bool wonDiagonal(enum Diagonal, Player* player);
+
+    // checks if a player has won. If so, returns true
+    // and sets the winner to the player, else returns false.
+    bool checkBoard();
+
 private:
     std::vector<Board*> grid_elements_;
     int size_ = 3;
     Player* winner_ = nullptr;
+    std::vector<Player*> players_;
 };
