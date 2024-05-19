@@ -3,4 +3,6 @@ project(SuperTicTacToe)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(SuperTicTacToe main.cpp)
+add_executable(SuperTicTacToe src/main.cpp
+        src/board.hh
+        src/board.cc)
