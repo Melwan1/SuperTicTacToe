@@ -6,9 +6,7 @@
 
 #include <vector>
 
-#include "player.hh"
-
-
+#include "../users/player.hh"
 
 /*
  * ================
@@ -35,9 +33,11 @@ public:
     const std::vector<Board *> &getGridElements() const;
     int getSize() const;
     Player *getWinner() const;
+    Board* getElementAtIndex(int index);
+    Board* getElementAtPosition(int i, int j);
 
-    void setElement(int, Board*);
-    void setWinner(Player*);
+    void setElement(int index, Board* board);
+    void setWinner(Player* player);
 
 private:
     std::vector<Board*> grid_elements_;

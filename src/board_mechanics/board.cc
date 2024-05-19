@@ -27,3 +27,11 @@ void Board::setElement(int index, Board *element) {
 void Board::setWinner(Player* player) {
     winner_ = player;
 }
+
+Board* Board::getElementAtIndex(int index) {
+    return grid_elements_.at(index);
+}
+
+Board* Board::getElementAtPosition(int i, int j) {
+    return grid_elements_.at(i * size_ + j);
+}
