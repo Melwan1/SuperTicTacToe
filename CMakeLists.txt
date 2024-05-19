@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(SuperTicTacToe src/main.cpp
         src/board.hh
-        src/board.cc)
+        src/board.cc
+        src/player.hh
+        src/player.cc)
