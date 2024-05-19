@@ -2,9 +2,13 @@
 // Created by Melwan Chevassus on 19/05/2024.
 //
 
+#pragma once
+
 #include <vector>
 
-#pragma once
+#include "player.hh"
+
+
 
 /*
  * ================
@@ -27,7 +31,16 @@ class Board {
 public:
     Board() = default;
     Board(int size);
+
+    const std::vector<Board *> &getGridElements() const;
+    int getSize() const;
+    Player *getWinner() const;
+
+    void setElement(int, Board*);
+    void setWinner(Player*);
+
 private:
     std::vector<Board*> grid_elements_;
     int size_ = 3;
+    Player* winner_ = nullptr;
 };
